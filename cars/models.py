@@ -35,7 +35,7 @@ class Car(models.Model):
         ('LA', 'Lancashire'),
         ('LE', 'Leicestershire'),
         ('LN', 'Lincolnshire'),
-        ('LO', 'London'),
+        ('LON', 'London'),
         ('ME', 'Merseyside'),
         ('MX', 'Middlesex'),
         ('NO', 'Norfolk'),
