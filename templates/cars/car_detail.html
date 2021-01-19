@@ -28,6 +28,7 @@
                 <div class="car-details-section">
                     <!-- Heading start -->
                     <div class="heading-car clearfix">
+                      {% include 'includes/messages.html' %}
                         <div class="pull-left">
                             <h3>{{single_car.car_title}}</h3>
                             <h6>
@@ -241,6 +242,7 @@
                                     </div>
                                   </div>
                                 </div>
+
                                   <div class="form-group">
                                       <select class="form-control" id="sel1" name="customer_need">
                                         <option value="I'm interested in this">I'm interested in this</option>
