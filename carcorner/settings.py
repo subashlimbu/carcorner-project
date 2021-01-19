@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'v2$35f3uueh&a5n^a@jw_l83^x#7h8r@f=qdb(j69uo0%g!+$v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['aqueous-garden-92106.herokuapp.com', 'carcorner.com', 'www.carcorner.com']
 
