@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'v2$35f3uueh&a5n^a@jw_l83^x#7h8r@f=qdb(j69uo0%g!+$v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -63,6 +64,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'carcorner.urls'
@@ -89,15 +91,17 @@ WSGI_APPLICATION = 'carcorner.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'carcorner_db',
-        'USER': 'postgres',
-        'PASSWORD': 'qwert123',
-        'HOST': 'localhost'
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'carcorner_db',
+#         'USER': 'postgres',
+#         'PASSWORD': 'qwert123',
+#         'HOST': 'localhost'
+#     }
+# }
+
+DATABASES = {'default': dj_database_url.config(default='postgres://postgres:qwert123@localhost/carcorner_db')}
 
 
 # Password validation
@@ -160,3 +164,6 @@ EMAIL_PORT = '587'
 EMAIL_HOST_USER = 'subashlimbu700@gmail.com'
 EMAIL_HOST_PASSWORD = 'rbnuoxpmdvtsxaxa'
 EMAIL_USE_TLS = True
+
+#Whitenoise settings
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
