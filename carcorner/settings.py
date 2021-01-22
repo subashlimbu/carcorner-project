@@ -26,7 +26,7 @@ SECRET_KEY = 'v2$35f3uueh&a5n^a@jw_l83^x#7h8r@f=qdb(j69uo0%g!+$v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['aqueous-garden-92106.herokuapp.com', 'carcorner.com', 'www.carcorner.com']
+ALLOWED_HOSTS = []
 
 LOGIN_REDIRECT_URL = 'dashboard'
 
@@ -91,17 +91,17 @@ WSGI_APPLICATION = 'carcorner.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'carcorner_db',
-#         'USER': 'postgres',
-#         'PASSWORD': 'qwert123',
-#         'HOST': 'localhost'
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'carcorner_db',
+        'USER': 'postgres',
+        'PASSWORD': 'qwert123',
+        'HOST': 'localhost'
+    }
+}
 
-DATABASES = {'default': dj_database_url.config(default='postgres://postgres:qwert123@localhost/carcorner_db')}
+# DATABASES = {'default': dj_database_url.config(default='postgres://postgres:qwert123@localhost/carcorner_db')}
 
 
 # Password validation
